@@ -1,0 +1,3 @@
+/home/idohacker/Documents/C learning/Log_in/Log_in/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/idohacker/Documents/C learning/Log_in/Log_in/cmake-build-debug/CMakeFiles/Log_in.dir
+/home/idohacker/Documents/C learning/Log_in/Log_in/cmake-build-debug/CMakeFiles/edit_cache.dir
