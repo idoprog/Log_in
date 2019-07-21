@@ -7,6 +7,7 @@
 #include <stdio.h>
 #include <wchar.h>
 #include <locale.h>
+#include <unistd.h>
 
 #include "ui_funcs.h"
 
@@ -16,6 +17,9 @@
 #define UP_LEFT_CORNER L"╔"
 #define DOWN_RIGHT_CORNER L"╝"
 #define DOWN_LEFT_CORNER L"╚"
+
+#define gotoxy(x, y) wprintf(L"\033[%d;%dH", (y), (x))
+
 
 // Function to print the top line
 void DrawUpLine(int w){
@@ -51,10 +55,32 @@ void DrawDownLine(int w){
     wprintf(DOWN_RIGHT_CORNER);
 }
 
-void DrawFrame(int w, int h){
-    DrawUpLine(w);
-    DrawSides(w, h);
+void DrawFrame(){
+    gotoxy(0, 0);
+    int ucols = cols - 2, ulines = lines - 3;
+    DrawUpLine(ucols);
+    DrawSides(ucols, ulines);
     putwchar(L'\n');
-    DrawDownLine(w);
+    DrawDownLine(ucols);
     putwchar(L'\n');
 }
+
+void PrintLogo(__useconds_t buffer){
+    int ucols = cols / 2 - 25, ulines = lines / 2 - 8;
+    gotoxy(ucols, ulines);
+    wchar_t ch;
+    int counter = 0;
+    FILE *fp = fopen("logo.txt", "r");
+    while( (ch = fgetwc(fp)) != EOF){
+        if(ch == L'\n'){
+            usleep(buffer);
+            counter++;
+            gotoxy(ucols, ulines + counter);
+        } else {
+            putwchar(ch);
+        }
+        fflush(stdout);
+    }
+    gotoxy(0, lines);
+}
+
