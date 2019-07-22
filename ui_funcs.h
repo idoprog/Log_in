@@ -9,8 +9,5 @@
 
 int cols, lines;
 
-void DrawFrame();
-
-void PrintLogo(__useconds_t buffer);
-
+void OpeningScreen(__useconds_t buff);
 #endif //LOG_IN_UI_FUNCS_H

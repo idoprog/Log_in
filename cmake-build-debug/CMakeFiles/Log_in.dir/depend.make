@@ -8,6 +8,7 @@ CMakeFiles/Log_in.dir/main.c.o: ../help_funcs.h
 CMakeFiles/Log_in.dir/main.c.o: ../main.c
 CMakeFiles/Log_in.dir/main.c.o: ../ui_funcs.h
 
+CMakeFiles/Log_in.dir/ui_funcs.c.o: ../help_funcs.h
 CMakeFiles/Log_in.dir/ui_funcs.c.o: ../ui_funcs.c
 CMakeFiles/Log_in.dir/ui_funcs.c.o: ../ui_funcs.h
 

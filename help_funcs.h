@@ -5,6 +5,12 @@
 #ifndef LOG_IN_HELP_FUNCS_H
 #define LOG_IN_HELP_FUNCS_H
 
-char *run_cmd(char* cmd, int len);
+void RunCmd(char* cmd, int len, char* pout);
+
+int GetCols();
+
+int GetLines();
+
+void SigintHandler();
 
 #endif //LOG_IN_HELP_FUNCS_H

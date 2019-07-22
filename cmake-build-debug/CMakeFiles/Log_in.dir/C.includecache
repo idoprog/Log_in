@@ -8,12 +8,20 @@
 
 /home/idohacker/Documents/C learning/Log_in/Log_in/help_funcs.h
 
-/home/idohacker/Documents/C learning/Log_in/Log_in/main.c
+/home/idohacker/Documents/C learning/Log_in/Log_in/ui_funcs.c
+ui_funcs.h
+/home/idohacker/Documents/C learning/Log_in/Log_in/ui_funcs.h
 stdlib.h
 -
 stdio.h
 -
+wchar.h
+-
 locale.h
+-
+unistd.h
+-
+string.h
 -
 ui_funcs.h
 /home/idohacker/Documents/C learning/Log_in/Log_in/ui_funcs.h
