@@ -31,4 +31,8 @@ help_funcs.h
 /home/idohacker/Documents/C learning/Log_in/Log_in/ui_funcs.h
 unistd.h
 -
+stdbool.h
+-
+wchar.h
+-
 

@@ -30,6 +30,8 @@
 
 #define gotoxy(x, y) wprintf(L"\033[%d;%dH", (y), (x))
 
+int element_x, element_y;
+
 
 // Function to print the top line
 void DrawUpLine(int w){
@@ -75,52 +77,35 @@ void DrawFrame(){
     putwchar(L'\n');
 }
 
-void PrintLogo(__useconds_t buffer){
-    int ucols = cols / 2 - 25, ulines = (int) ((double) lines * 0.1);
-    gotoxy(ucols, ulines);
-    wchar_t ch;
-    int counter = 0;
-    FILE *fp = fopen("logo.txt", "r");
-    while( (ch = fgetwc(fp)) != EOF){
-        if(ch == L'\n'){
-            usleep(buffer);
-            counter++;
-            gotoxy(ucols, ulines + counter);
-        } else {
-            putwchar(ch);
-        }
-        fflush(stdout);
-    }
-    fflush(stdout);
-    fclose(fp);
-    gotoxy(0, lines);
-}
-
-void PrintButton(int x, int y, wchar_t *txt){
-    gotoxy(x, y);
-    int len = wcslen(txt);
+void PrintButton(button btn){
+    gotoxy(element_x, element_y);
+    int len = wcslen(btn.txt);
     wprintf(UP_LEFT_CORNER_LINE);
     for (int i = 0; i < len + 2; ++i) {
         wprintf(HORIZONTAL_LINE);
     }
     wprintf(UP_RIGHT_CORNER_LINE);
 
-    gotoxy(x, y + 1);
+    gotoxy(element_x, element_y + 1);
 
     wprintf(VERTICAL_LINE);
-    wprintf(L" %ls ", txt);
+    if(btn.highlighted == true){
+       wprintf(L"\e[48;5;15m");
+       wprintf(L"\e[38;5;0m");
+       wprintf(L" %ls ", btn.txt);
+       wprintf(L"\e[0m");
+    } else{
+        wprintf(L" %ls ", btn.txt);
+    }
     wprintf(VERTICAL_LINE);
 
-    gotoxy(x, y + 2);
+    gotoxy(element_x, element_y + 2);
 
     wprintf(DOWN_LEFT_CORNER_LINE);
     for (int i = 0; i < len + 2; ++i) {
         wprintf(HORIZONTAL_LINE);
     }
     wprintf(DOWN_RIGHT_CORNER_LINE);
-
-    gotoxy(0, lines);
-
 }
 
 void UpdateSize(){
@@ -128,12 +113,90 @@ void UpdateSize(){
     cols = GetCols();
 }
 
-void OpeningScreen(__useconds_t buff){
-    system("clear");
-    UpdateSize();
-    DrawFrame();
-    PrintLogo(buff);
-    PrintButton(cols / 2 - 5 ,(int) ((double)lines * 0.65) , L"Log in");
-    PrintButton(cols / 2 - 5 , (int) ((double)lines * 0.65) + 4, L"Register");
+void PrintFile(label lbl){
+    gotoxy(element_x, element_y);
+    FILE *fp = fopen(lbl.file_name, "r");
+    wchar_t ch;
+    int counter = 0;
+    while( (ch = fgetwc(fp)) != EOF){
+        if(ch == L'\n'){
+            usleep(lbl.buffer);
+            counter++;
+            gotoxy(element_x, element_y + counter);
+        } else {
+            putwchar(ch);
+        }
+        fflush(stdout);
+    }
+    fflush(stdout);
+    fclose(fp);
 }
 
+void PrintText(label lbl){
+    gotoxy(element_x, element_y);
+    for(int i = 0; i < wcslen(lbl.txt); i++){
+        usleep(lbl.buffer);
+        putwchar(lbl.txt[i]);
+        fflush(stdout);
+    }
+}
+
+int FileMaxLength(char * file_name){
+    FILE *fp = fopen(file_name, "r");
+    int max_line = 0;
+    int count = 0;
+    char ch;
+    while( (ch = fgetc(fp)) != EOF) {
+        if (ch == '\n') {
+            if(count > max_line){
+                max_line = count;
+            }
+            count = 0;
+        } else{
+            count++;
+        }
+    }
+    return max_line;
+}
+
+void ShowUI(int element_num, element * element_arr){
+    bool first_draw = true;
+    while (1){
+        if(lines != GetLines() || cols != GetCols()){
+            UpdateSize();
+            system("clear");
+            DrawFrame();
+            for (int i = 0; i < element_num; ++i) {
+                switch (element_arr[i].e_type){
+
+                    case BUTTON:
+                        element_x = (int) (element_arr[i].btn.x_percent * (double)cols);
+                        element_y = (int) (element_arr[i].btn.y_percent * (double)lines);
+                        PrintButton(element_arr[i].btn);
+                        break;
+
+                    case LABEL:
+                        element_y = (int) (element_arr[i].lbl.y_percent * (double)lines);
+                        switch (element_arr[i].lbl.l_type){
+                            case TEXT:
+                                element_x = (int) (element_arr[i].lbl.x_percent * (double)cols);
+                                PrintText(element_arr[i].lbl);
+                                break;
+
+                            case FILE_CONTENT:
+                                element_x = (int) (element_arr[i].lbl.x_percent * (double)(cols - FileMaxLength(element_arr[i].lbl.file_name)));
+                                PrintFile(element_arr[i].lbl);
+                                break;
+                        }
+                        if(first_draw == true){
+                            first_draw = false;
+                            element_arr[i].lbl.buffer = 0;
+                        }
+                        break;
+                }
+                gotoxy(0, lines);
+                fflush(stdout);
+            }
+        }
+    }
+}
