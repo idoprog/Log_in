@@ -1,7 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <locale.h>
-#include <signal.h>
 
 
 #include "ui_funcs.h"
@@ -11,7 +10,7 @@ void OpeningScreen();
 
 int main(){
     setlocale(LC_ALL, "");
-    signal(SIGINT, SigintHandler);
+    atexit(ClearScreen);
     OpeningScreen();
 }
 

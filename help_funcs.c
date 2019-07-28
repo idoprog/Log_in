@@ -35,8 +35,6 @@ int GetLines(){
     return height;
 }
 
-void SigintHandler(){
+void ClearScreen(){
     system("clear");
-    gotoxy(0,0);
-    exit(0);
 }

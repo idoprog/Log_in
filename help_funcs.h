@@ -11,6 +11,6 @@ int GetCols();
 
 int GetLines();
 
-void SigintHandler();
+void ClearScreen();
 
 #endif //LOG_IN_HELP_FUNCS_H

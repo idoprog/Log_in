@@ -9,6 +9,8 @@
 #include <locale.h>
 #include <unistd.h>
 #include <string.h>
+#include <pthread.h>
+#include <signal.h>
 
 #include "ui_funcs.h"
 #include "help_funcs.h"
@@ -30,8 +32,24 @@
 
 #define gotoxy(x, y) wprintf(L"\033[%d;%dH", (y), (x))
 
-int element_x, element_y;
+static int element_x, element_y;
+pthread_t button_thread_id;
+static pthread_mutex_t cusror_mutex = PTHREAD_MUTEX_INITIALIZER;
 
+typedef struct{
+    wchar_t txt[20];
+    int x;
+    int y;
+    int len;
+}button_info;
+
+void SigintHandler(){
+    system("setterm -cursor on");
+    pthread_cancel(button_thread_id);
+    system("clear");
+    gotoxy(0,0);
+    exit(1);
+}
 
 // Function to print the top line
 void DrawUpLine(int w){
@@ -77,6 +95,46 @@ void DrawFrame(){
     putwchar(L'\n');
 }
 
+void BlinkButtonCleanUp(void *arg){
+    free(arg);
+    system("clear");
+    pthread_mutex_unlock(&cusror_mutex);
+}
+
+void *BlinkButtonThread(void *args){
+    button_info *b_info = args;
+
+    bool blink = true;
+    wchar_t ch;
+
+    pthread_cleanup_push(BlinkButtonCleanUp, b_info)
+    pthread_mutex_lock(&cusror_mutex);
+    while (1){
+        gotoxy(b_info->x + 1, b_info->y + 1);
+        if(blink == true){
+            wprintf(L"\e[48;5;15m");
+            wprintf(L"\e[38;5;0m");
+            putwchar(L' ');
+            for (int i = 0; i < b_info->len; ++i) {
+                ch = b_info->txt[i];
+                putwchar(ch);
+            }
+            putwchar(L' ');
+            wprintf(L"\e[0m");
+            blink = false;
+        } else{
+            wprintf(L" %ls ", b_info->txt);
+            blink = true;
+        }
+        gotoxy(0, lines);
+        usleep(600000);
+        fflush(stdout);
+    }
+    pthread_cleanup_pop(1);
+    free(b_info);
+    return 0;
+}
+
 void PrintButton(button btn){
     gotoxy(element_x, element_y);
     int len = wcslen(btn.txt);
@@ -90,13 +148,16 @@ void PrintButton(button btn){
 
     wprintf(VERTICAL_LINE);
     if(btn.highlighted == true){
-       wprintf(L"\e[48;5;15m");
-       wprintf(L"\e[38;5;0m");
-       wprintf(L" %ls ", btn.txt);
-       wprintf(L"\e[0m");
+        button_info *args = malloc(sizeof(button_info));
+        args->x = element_x;
+        args->y = element_y;
+        args->len = len;
+        wcpcpy(args->txt, btn.txt);
+        pthread_create(&button_thread_id, NULL, BlinkButtonThread, args);
     } else{
         wprintf(L" %ls ", btn.txt);
     }
+    gotoxy(element_x + len + 3, element_y + 1);
     wprintf(VERTICAL_LINE);
 
     gotoxy(element_x, element_y + 2);
@@ -160,11 +221,15 @@ int FileMaxLength(char * file_name){
 }
 
 void ShowUI(int element_num, element * element_arr){
+    system("setterm -cursor off");
+    signal(SIGINT, SigintHandler);
     bool first_draw = true;
     while (1){
         if(lines != GetLines() || cols != GetCols()){
+            pthread_cancel(button_thread_id);
             UpdateSize();
             system("clear");
+            pthread_mutex_lock(&cusror_mutex);
             DrawFrame();
             for (int i = 0; i < element_num; ++i) {
                 switch (element_arr[i].e_type){
@@ -198,5 +263,6 @@ void ShowUI(int element_num, element * element_arr){
                 fflush(stdout);
             }
         }
+        pthread_mutex_unlock(&cusror_mutex);
     }
 }
