@@ -4,11 +4,15 @@
 CMakeFiles/Log_in.dir/help_funcs.c.o
  /home/idohacker/Documents/C learning/Log_in/Log_in/help_funcs.c
  /home/idohacker/Documents/C learning/Log_in/Log_in/help_funcs.h
+CMakeFiles/Log_in.dir/high_ui_funcs.c.o
+ /home/idohacker/Documents/C learning/Log_in/Log_in/help_funcs.h
+ /home/idohacker/Documents/C learning/Log_in/Log_in/high_ui_funcs.c
+ /home/idohacker/Documents/C learning/Log_in/Log_in/high_ui_funcs.h
+ /home/idohacker/Documents/C learning/Log_in/Log_in/low_ui_funcs.h
+CMakeFiles/Log_in.dir/low_ui_funcs.c.o
+ /home/idohacker/Documents/C learning/Log_in/Log_in/low_ui_funcs.c
+ /home/idohacker/Documents/C learning/Log_in/Log_in/low_ui_funcs.h
 CMakeFiles/Log_in.dir/main.c.o
- /home/idohacker/Documents/C learning/Log_in/Log_in/help_funcs.h
+ /home/idohacker/Documents/C learning/Log_in/Log_in/high_ui_funcs.h
+ /home/idohacker/Documents/C learning/Log_in/Log_in/low_ui_funcs.h
  /home/idohacker/Documents/C learning/Log_in/Log_in/main.c
- /home/idohacker/Documents/C learning/Log_in/Log_in/ui_funcs.h
-CMakeFiles/Log_in.dir/ui_funcs.c.o
- /home/idohacker/Documents/C learning/Log_in/Log_in/help_funcs.h
- /home/idohacker/Documents/C learning/Log_in/Log_in/ui_funcs.c
- /home/idohacker/Documents/C learning/Log_in/Log_in/ui_funcs.h

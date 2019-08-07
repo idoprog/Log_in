@@ -6,61 +6,27 @@
 
 #IncludeRegexTransform: 
 
-/home/idohacker/Documents/C learning/Log_in/Log_in/help_funcs.c
-help_funcs.h
-/home/idohacker/Documents/C learning/Log_in/Log_in/help_funcs.h
-stdio.h
--
-stdlib.h
--
-string.h
--
-wchar.h
--
-
 /home/idohacker/Documents/C learning/Log_in/Log_in/help_funcs.h
 
-/home/idohacker/Documents/C learning/Log_in/Log_in/main.c
-stdlib.h
--
-stdio.h
--
-locale.h
--
-ui_funcs.h
-/home/idohacker/Documents/C learning/Log_in/Log_in/ui_funcs.h
-help_funcs.h
-/home/idohacker/Documents/C learning/Log_in/Log_in/help_funcs.h
-
-/home/idohacker/Documents/C learning/Log_in/Log_in/ui_funcs.c
-ui_funcs.h
-/home/idohacker/Documents/C learning/Log_in/Log_in/ui_funcs.h
-stdlib.h
--
-stdio.h
--
-wchar.h
--
-locale.h
--
-unistd.h
--
-string.h
--
-pthread.h
--
+/home/idohacker/Documents/C learning/Log_in/Log_in/high_ui_funcs.c
 signal.h
 -
-ui_funcs.h
-/home/idohacker/Documents/C learning/Log_in/Log_in/ui_funcs.h
+stdlib.h
+-
+low_ui_funcs.h
+/home/idohacker/Documents/C learning/Log_in/Log_in/low_ui_funcs.h
 help_funcs.h
 /home/idohacker/Documents/C learning/Log_in/Log_in/help_funcs.h
+high_ui_funcs.h
+/home/idohacker/Documents/C learning/Log_in/Log_in/high_ui_funcs.h
 
-/home/idohacker/Documents/C learning/Log_in/Log_in/ui_funcs.h
-unistd.h
+/home/idohacker/Documents/C learning/Log_in/Log_in/high_ui_funcs.h
+low_ui_funcs.h
+/home/idohacker/Documents/C learning/Log_in/Log_in/low_ui_funcs.h
+ncurses.h
 -
-stdbool.h
--
-wchar.h
+
+/home/idohacker/Documents/C learning/Log_in/Log_in/low_ui_funcs.h
+ncurses.h
 -
 

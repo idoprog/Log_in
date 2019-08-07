@@ -5,8 +5,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
   "/home/idohacker/Documents/C learning/Log_in/Log_in/help_funcs.c" "/home/idohacker/Documents/C learning/Log_in/Log_in/cmake-build-debug/CMakeFiles/Log_in.dir/help_funcs.c.o"
+  "/home/idohacker/Documents/C learning/Log_in/Log_in/high_ui_funcs.c" "/home/idohacker/Documents/C learning/Log_in/Log_in/cmake-build-debug/CMakeFiles/Log_in.dir/high_ui_funcs.c.o"
+  "/home/idohacker/Documents/C learning/Log_in/Log_in/low_ui_funcs.c" "/home/idohacker/Documents/C learning/Log_in/Log_in/cmake-build-debug/CMakeFiles/Log_in.dir/low_ui_funcs.c.o"
   "/home/idohacker/Documents/C learning/Log_in/Log_in/main.c" "/home/idohacker/Documents/C learning/Log_in/Log_in/cmake-build-debug/CMakeFiles/Log_in.dir/main.c.o"
-  "/home/idohacker/Documents/C learning/Log_in/Log_in/ui_funcs.c" "/home/idohacker/Documents/C learning/Log_in/Log_in/cmake-build-debug/CMakeFiles/Log_in.dir/ui_funcs.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

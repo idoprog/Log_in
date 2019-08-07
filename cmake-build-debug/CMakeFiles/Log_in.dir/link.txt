@@ -1,1 +1,1 @@
-/bin/gcc-8 -g   CMakeFiles/Log_in.dir/main.c.o CMakeFiles/Log_in.dir/ui_funcs.c.o CMakeFiles/Log_in.dir/help_funcs.c.o  -o Log_in -lpthread 
+/bin/gcc-8 -g   CMakeFiles/Log_in.dir/main.c.o CMakeFiles/Log_in.dir/low_ui_funcs.c.o CMakeFiles/Log_in.dir/high_ui_funcs.c.o CMakeFiles/Log_in.dir/help_funcs.c.o  -o Log_in -lpthread -lncurses 

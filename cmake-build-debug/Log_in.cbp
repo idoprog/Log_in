@@ -84,13 +84,19 @@
 		<Unit filename="/home/idohacker/Documents/C learning/Log_in/Log_in/help_funcs.h">
 			<Option target="Log_in"/>
 		</Unit>
+		<Unit filename="/home/idohacker/Documents/C learning/Log_in/Log_in/high_ui_funcs.c">
+			<Option target="Log_in"/>
+		</Unit>
+		<Unit filename="/home/idohacker/Documents/C learning/Log_in/Log_in/high_ui_funcs.h">
+			<Option target="Log_in"/>
+		</Unit>
+		<Unit filename="/home/idohacker/Documents/C learning/Log_in/Log_in/low_ui_funcs.c">
+			<Option target="Log_in"/>
+		</Unit>
+		<Unit filename="/home/idohacker/Documents/C learning/Log_in/Log_in/low_ui_funcs.h">
+			<Option target="Log_in"/>
+		</Unit>
 		<Unit filename="/home/idohacker/Documents/C learning/Log_in/Log_in/main.c">
-			<Option target="Log_in"/>
-		</Unit>
-		<Unit filename="/home/idohacker/Documents/C learning/Log_in/Log_in/ui_funcs.c">
-			<Option target="Log_in"/>
-		</Unit>
-		<Unit filename="/home/idohacker/Documents/C learning/Log_in/Log_in/ui_funcs.h">
 			<Option target="Log_in"/>
 		</Unit>
 		<Unit filename="/home/idohacker/Documents/C learning/Log_in/Log_in/CMakeLists.txt">

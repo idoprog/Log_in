@@ -70,22 +70,35 @@ CMakeFiles/Log_in.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Log_in.dir/main.c.s"
 	/bin/gcc-8 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/home/idohacker/Documents/C learning/Log_in/Log_in/main.c" -o CMakeFiles/Log_in.dir/main.c.s
 
-CMakeFiles/Log_in.dir/ui_funcs.c.o: CMakeFiles/Log_in.dir/flags.make
-CMakeFiles/Log_in.dir/ui_funcs.c.o: ../ui_funcs.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/idohacker/Documents/C learning/Log_in/Log_in/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/Log_in.dir/ui_funcs.c.o"
-	/bin/gcc-8 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Log_in.dir/ui_funcs.c.o   -c "/home/idohacker/Documents/C learning/Log_in/Log_in/ui_funcs.c"
+CMakeFiles/Log_in.dir/low_ui_funcs.c.o: CMakeFiles/Log_in.dir/flags.make
+CMakeFiles/Log_in.dir/low_ui_funcs.c.o: ../low_ui_funcs.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/idohacker/Documents/C learning/Log_in/Log_in/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/Log_in.dir/low_ui_funcs.c.o"
+	/bin/gcc-8 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Log_in.dir/low_ui_funcs.c.o   -c "/home/idohacker/Documents/C learning/Log_in/Log_in/low_ui_funcs.c"
 
-CMakeFiles/Log_in.dir/ui_funcs.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Log_in.dir/ui_funcs.c.i"
-	/bin/gcc-8 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/home/idohacker/Documents/C learning/Log_in/Log_in/ui_funcs.c" > CMakeFiles/Log_in.dir/ui_funcs.c.i
+CMakeFiles/Log_in.dir/low_ui_funcs.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Log_in.dir/low_ui_funcs.c.i"
+	/bin/gcc-8 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/home/idohacker/Documents/C learning/Log_in/Log_in/low_ui_funcs.c" > CMakeFiles/Log_in.dir/low_ui_funcs.c.i
 
-CMakeFiles/Log_in.dir/ui_funcs.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Log_in.dir/ui_funcs.c.s"
-	/bin/gcc-8 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/home/idohacker/Documents/C learning/Log_in/Log_in/ui_funcs.c" -o CMakeFiles/Log_in.dir/ui_funcs.c.s
+CMakeFiles/Log_in.dir/low_ui_funcs.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Log_in.dir/low_ui_funcs.c.s"
+	/bin/gcc-8 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/home/idohacker/Documents/C learning/Log_in/Log_in/low_ui_funcs.c" -o CMakeFiles/Log_in.dir/low_ui_funcs.c.s
+
+CMakeFiles/Log_in.dir/high_ui_funcs.c.o: CMakeFiles/Log_in.dir/flags.make
+CMakeFiles/Log_in.dir/high_ui_funcs.c.o: ../high_ui_funcs.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/idohacker/Documents/C learning/Log_in/Log_in/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/Log_in.dir/high_ui_funcs.c.o"
+	/bin/gcc-8 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Log_in.dir/high_ui_funcs.c.o   -c "/home/idohacker/Documents/C learning/Log_in/Log_in/high_ui_funcs.c"
+
+CMakeFiles/Log_in.dir/high_ui_funcs.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Log_in.dir/high_ui_funcs.c.i"
+	/bin/gcc-8 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/home/idohacker/Documents/C learning/Log_in/Log_in/high_ui_funcs.c" > CMakeFiles/Log_in.dir/high_ui_funcs.c.i
+
+CMakeFiles/Log_in.dir/high_ui_funcs.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Log_in.dir/high_ui_funcs.c.s"
+	/bin/gcc-8 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/home/idohacker/Documents/C learning/Log_in/Log_in/high_ui_funcs.c" -o CMakeFiles/Log_in.dir/high_ui_funcs.c.s
 
 CMakeFiles/Log_in.dir/help_funcs.c.o: CMakeFiles/Log_in.dir/flags.make
 CMakeFiles/Log_in.dir/help_funcs.c.o: ../help_funcs.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/idohacker/Documents/C learning/Log_in/Log_in/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/Log_in.dir/help_funcs.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/idohacker/Documents/C learning/Log_in/Log_in/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/Log_in.dir/help_funcs.c.o"
 	/bin/gcc-8 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Log_in.dir/help_funcs.c.o   -c "/home/idohacker/Documents/C learning/Log_in/Log_in/help_funcs.c"
 
 CMakeFiles/Log_in.dir/help_funcs.c.i: cmake_force
@@ -99,18 +112,20 @@ CMakeFiles/Log_in.dir/help_funcs.c.s: cmake_force
 # Object files for target Log_in
 Log_in_OBJECTS = \
 "CMakeFiles/Log_in.dir/main.c.o" \
-"CMakeFiles/Log_in.dir/ui_funcs.c.o" \
+"CMakeFiles/Log_in.dir/low_ui_funcs.c.o" \
+"CMakeFiles/Log_in.dir/high_ui_funcs.c.o" \
 "CMakeFiles/Log_in.dir/help_funcs.c.o"
 
 # External object files for target Log_in
 Log_in_EXTERNAL_OBJECTS =
 
 Log_in: CMakeFiles/Log_in.dir/main.c.o
-Log_in: CMakeFiles/Log_in.dir/ui_funcs.c.o
+Log_in: CMakeFiles/Log_in.dir/low_ui_funcs.c.o
+Log_in: CMakeFiles/Log_in.dir/high_ui_funcs.c.o
 Log_in: CMakeFiles/Log_in.dir/help_funcs.c.o
 Log_in: CMakeFiles/Log_in.dir/build.make
 Log_in: CMakeFiles/Log_in.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/home/idohacker/Documents/C learning/Log_in/Log_in/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable Log_in"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/home/idohacker/Documents/C learning/Log_in/Log_in/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Linking C executable Log_in"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Log_in.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

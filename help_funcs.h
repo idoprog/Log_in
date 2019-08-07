@@ -1,16 +1,10 @@
 //
-// Created by idohacker on 7/20/19.
+// Created by idohacker on 8/3/19.
 //
 
 #ifndef LOG_IN_HELP_FUNCS_H
 #define LOG_IN_HELP_FUNCS_H
 
-void RunCmd(char* cmd, int len, char* pout);
-
-int GetCols();
-
-int GetLines();
-
-void ClearScreen();
+int FileMaxLength(char * fname);
 
 #endif //LOG_IN_HELP_FUNCS_H

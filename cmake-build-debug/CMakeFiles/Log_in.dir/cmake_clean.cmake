@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Log_in.dir/main.c.o"
-  "CMakeFiles/Log_in.dir/ui_funcs.c.o"
+  "CMakeFiles/Log_in.dir/low_ui_funcs.c.o"
+  "CMakeFiles/Log_in.dir/high_ui_funcs.c.o"
   "CMakeFiles/Log_in.dir/help_funcs.c.o"
   "Log_in.pdb"
   "Log_in"

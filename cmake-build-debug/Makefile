@@ -150,6 +150,60 @@ help_funcs.c.s:
 	$(MAKE) -f CMakeFiles/Log_in.dir/build.make CMakeFiles/Log_in.dir/help_funcs.c.s
 .PHONY : help_funcs.c.s
 
+high_ui_funcs.o: high_ui_funcs.c.o
+
+.PHONY : high_ui_funcs.o
+
+# target to build an object file
+high_ui_funcs.c.o:
+	$(MAKE) -f CMakeFiles/Log_in.dir/build.make CMakeFiles/Log_in.dir/high_ui_funcs.c.o
+.PHONY : high_ui_funcs.c.o
+
+high_ui_funcs.i: high_ui_funcs.c.i
+
+.PHONY : high_ui_funcs.i
+
+# target to preprocess a source file
+high_ui_funcs.c.i:
+	$(MAKE) -f CMakeFiles/Log_in.dir/build.make CMakeFiles/Log_in.dir/high_ui_funcs.c.i
+.PHONY : high_ui_funcs.c.i
+
+high_ui_funcs.s: high_ui_funcs.c.s
+
+.PHONY : high_ui_funcs.s
+
+# target to generate assembly for a file
+high_ui_funcs.c.s:
+	$(MAKE) -f CMakeFiles/Log_in.dir/build.make CMakeFiles/Log_in.dir/high_ui_funcs.c.s
+.PHONY : high_ui_funcs.c.s
+
+low_ui_funcs.o: low_ui_funcs.c.o
+
+.PHONY : low_ui_funcs.o
+
+# target to build an object file
+low_ui_funcs.c.o:
+	$(MAKE) -f CMakeFiles/Log_in.dir/build.make CMakeFiles/Log_in.dir/low_ui_funcs.c.o
+.PHONY : low_ui_funcs.c.o
+
+low_ui_funcs.i: low_ui_funcs.c.i
+
+.PHONY : low_ui_funcs.i
+
+# target to preprocess a source file
+low_ui_funcs.c.i:
+	$(MAKE) -f CMakeFiles/Log_in.dir/build.make CMakeFiles/Log_in.dir/low_ui_funcs.c.i
+.PHONY : low_ui_funcs.c.i
+
+low_ui_funcs.s: low_ui_funcs.c.s
+
+.PHONY : low_ui_funcs.s
+
+# target to generate assembly for a file
+low_ui_funcs.c.s:
+	$(MAKE) -f CMakeFiles/Log_in.dir/build.make CMakeFiles/Log_in.dir/low_ui_funcs.c.s
+.PHONY : low_ui_funcs.c.s
+
 main.o: main.c.o
 
 .PHONY : main.o
@@ -177,33 +231,6 @@ main.c.s:
 	$(MAKE) -f CMakeFiles/Log_in.dir/build.make CMakeFiles/Log_in.dir/main.c.s
 .PHONY : main.c.s
 
-ui_funcs.o: ui_funcs.c.o
-
-.PHONY : ui_funcs.o
-
-# target to build an object file
-ui_funcs.c.o:
-	$(MAKE) -f CMakeFiles/Log_in.dir/build.make CMakeFiles/Log_in.dir/ui_funcs.c.o
-.PHONY : ui_funcs.c.o
-
-ui_funcs.i: ui_funcs.c.i
-
-.PHONY : ui_funcs.i
-
-# target to preprocess a source file
-ui_funcs.c.i:
-	$(MAKE) -f CMakeFiles/Log_in.dir/build.make CMakeFiles/Log_in.dir/ui_funcs.c.i
-.PHONY : ui_funcs.c.i
-
-ui_funcs.s: ui_funcs.c.s
-
-.PHONY : ui_funcs.s
-
-# target to generate assembly for a file
-ui_funcs.c.s:
-	$(MAKE) -f CMakeFiles/Log_in.dir/build.make CMakeFiles/Log_in.dir/ui_funcs.c.s
-.PHONY : ui_funcs.c.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -216,12 +243,15 @@ help:
 	@echo "... help_funcs.o"
 	@echo "... help_funcs.i"
 	@echo "... help_funcs.s"
+	@echo "... high_ui_funcs.o"
+	@echo "... high_ui_funcs.i"
+	@echo "... high_ui_funcs.s"
+	@echo "... low_ui_funcs.o"
+	@echo "... low_ui_funcs.i"
+	@echo "... low_ui_funcs.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... ui_funcs.o"
-	@echo "... ui_funcs.i"
-	@echo "... ui_funcs.s"
 .PHONY : help
 
 
