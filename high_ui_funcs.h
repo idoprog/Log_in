@@ -27,16 +27,17 @@ typedef struct e_list{
 } ElementList;
 
 typedef struct {
+    int exit_key;
     WINDOW * window;
     ElementList * element_list_h;
     bool frame;
 }IWINDOW;
 
-IWINDOW CreateWindow(bool frame);
-void AddButton(IWINDOW win, float x_precent, float y_precent, bool highlight, char * txt);
-void AddFileLabel(IWINDOW win, float x_precent, float y_precent, bool highlight, char * fname);
-void AddLabel(IWINDOW win, float x_precent, float y_precent, bool highlight, char * txt);
-void MainLoop(IWINDOW win);
+IWINDOW * CreateWindow(bool frame, int exit_key);
+void AddButton(IWINDOW * win, float x_percent, float y_percent, bool highlight, char * txt);
+void AddFileLabel(IWINDOW * win, float x_percent, float y_percent, bool highlight, char * fname);
+void AddLabel(IWINDOW * win, float x_percent, float y_percent, bool highlight, char * txt);
+void MainLoop(IWINDOW * win);
 
 
 

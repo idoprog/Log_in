@@ -17,6 +17,10 @@ low_ui_funcs.h
 /home/idohacker/Documents/C learning/Log_in/Log_in/low_ui_funcs.h
 help_funcs.h
 /home/idohacker/Documents/C learning/Log_in/Log_in/help_funcs.h
+signal.h
+-
+pthread.h
+-
 high_ui_funcs.h
 /home/idohacker/Documents/C learning/Log_in/Log_in/high_ui_funcs.h
 

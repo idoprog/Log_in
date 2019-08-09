@@ -11,9 +11,9 @@ int main(){
 }
 
 void OpeningWindow(){
-    IWINDOW win = CreateWindow(true);
+    IWINDOW * win = CreateWindow(true, KEY_BACKSPACE);
     AddFileLabel(win, 0.5, 0.1, false, "logo.txt");
-    AddButton(win, 0.4, 0.5, true, "Log in");
+    AddButton(win, 0.4, 0.6, true, "Log in");
     AddButton(win, 0.4, 0.8, false, "Register");
     MainLoop(win);
 }
